@@ -7,39 +7,42 @@
 #define MALE 0
 #define FEMALE 1
 
+#define HONEST true
+
 using namespace std;
 
 class IAnimal {
     int _age;
     bool _sex;
     int _food;
-    int _daysBeforeHunger;
     int _endOfReproduction;
     int _lengthOfLife;
-    int _observation;
+    bool _faithful;
 protected:
     int _price;
     float _foodByDay;
+    int _daysBeforeHunger;
     int _pregnancy;
     int _sexualMaturity;
     float _infantMortality;
 public:
-    IAnimal(int age, bool sex, int food, int daysBeforeHunger,
+    IAnimal(int age, bool sex, int food,
             int endOfReproduction, int lengthOfLife,
-            int observation);
+            bool faithful);
 
     int Age();
 
     string Sex();
+
+    virtual string Species() = 0;
 };
 
-IAnimal::IAnimal(int age, bool sex, int food, int daysBeforeHunger,
+IAnimal::IAnimal(int age, bool sex, int food,
                  int endOfReproduction, int lengthOfLife,
-                 int observation) : _age(age), _sex(sex), _food(food),
-                                    _daysBeforeHunger(daysBeforeHunger),
-                                    _endOfReproduction(endOfReproduction),
-                                    _lengthOfLife(lengthOfLife),
-                                    _observation(observation) {
+                 bool faithful) : _age(age), _sex(sex), _food(food),
+                                  _endOfReproduction(endOfReproduction),
+                                  _lengthOfLife(lengthOfLife),
+                                  _faithful(faithful) {
 }
 
 int IAnimal::Age() {
@@ -59,20 +62,24 @@ string IAnimal::Sex() {
 
 class Tiger : public IAnimal {
 public:
-    Tiger(int age, bool sex, int observation);
+    Tiger(int age, bool sex, bool faithful);
+
+    string Species();
 };
 
-Tiger::Tiger(int age, bool sex, int observation) :
-        IAnimal(age, sex, MEAT, 2, 14, 25, observation) {
+Tiger::Tiger(int age, bool sex, bool faithful) :
+        IAnimal(age, sex, MEAT, 14, 25, faithful) {
     switch (sex) {
         case MALE:
             _foodByDay = 12;
+            _daysBeforeHunger = 2;
             _sexualMaturity = 72;
             _pregnancy = 0;
             _infantMortality = 0;
             break;
         case FEMALE:
             _foodByDay = 10;
+            _daysBeforeHunger = 2;
             _sexualMaturity = 48;
             _pregnancy = 90;
             _infantMortality = 0.33;
@@ -80,9 +87,78 @@ Tiger::Tiger(int age, bool sex, int observation) :
     }
 }
 
+string Tiger::Species() {
+    return "tiger";
+}
+
+class Eagle : public IAnimal {
+public:
+    Eagle(int age, bool sex, bool faithful);
+
+    string Species();
+};
+
+Eagle::Eagle(int age, bool sex, bool faithful) :
+        IAnimal(age, sex, MEAT, 14, 25, faithful) {
+    switch (sex) {
+        case MALE:
+            _foodByDay = 0.25;
+            _daysBeforeHunger = 10;
+            _sexualMaturity = 48;
+            _pregnancy = 0;
+            _infantMortality = 0;
+            break;
+        case FEMALE:
+            _foodByDay = 0.3;
+            _daysBeforeHunger = 10;
+            _sexualMaturity = 48;
+            _pregnancy = 45;
+            _infantMortality = 0.5;
+            break;
+    }
+}
+
+string Eagle::Species() {
+    return "eagle";
+}
+
+class Chicken : public IAnimal {
+public:
+    Chicken(int age, bool sex, bool faithful);
+
+    string Species();
+};
+
+Chicken::Chicken(int age, bool sex, bool faithful) :
+        IAnimal(age, sex, SEEDS, 8, 15, faithful) {
+    switch (sex) {
+        case MALE:
+            _foodByDay = 0.18;
+            _daysBeforeHunger = 2;
+            _sexualMaturity = 6;
+            _pregnancy = 0;
+            _infantMortality = 0;
+            break;
+        case FEMALE:
+            _foodByDay = 0.15;
+            _daysBeforeHunger = 1;
+            _sexualMaturity = 6;
+            _pregnancy = 42;
+            _infantMortality = 0.5;
+            break;
+    }
+}
+
+string Chicken::Species() {
+    return "chicken";
+}
 
 int main() {
-    Tiger *t = new Tiger(0, MALE, 0);
-    cout << "I am " << t->Age() << " months old, and I am a " << t->Sex() << endl;
+    Tiger *t = new Tiger(0, MALE, false);
+    Eagle *e = new Eagle(0, FEMALE, HONEST);
+    Chicken *c = new Chicken(0, FEMALE, false);
+    cout << "I am a " << t->Age() << " days old " << t->Species() << " and I am a " << t->Sex() << endl;
+    cout << "I am a " << e->Age() << " days old " << e->Species() << " and I am a " << e->Sex() << endl;
+    cout << "I am a " << c->Age() << " days old " << c->Species() << " and I am a " << c->Sex() << endl;
     return 0;
 }
