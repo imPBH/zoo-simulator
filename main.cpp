@@ -3,6 +3,9 @@
 #define MALE 0
 #define FEMALE 1
 #define HONEST true
+#define TIGER 0
+#define EAGLE 1
+#define CHICKEN 2
 
 #include <iostream>
 #include <vector>
@@ -15,6 +18,7 @@ using namespace std;
 #include "Tiger.h"
 #include "Eagle.h"
 #include "Chicken.h"
+#include "Habitat.h"
 
 
 int main() {
@@ -25,5 +29,8 @@ int main() {
     cout << "I am a " << e->Age() << " days old " << e->Species() << " and I am a " << e->Sex() << endl;
     cout << "I am a " << c->Age() << " days old " << c->Species() << " and I am a " << c->Sex() << endl;
     Accounting *a = new Accounting(80000);
+    Habitat *h = new Habitat(TIGER);
+    Habitat *h1 = new Habitat(EAGLE);
+    Habitat *h2 = new Habitat(CHICKEN);
     return 0;
 }
