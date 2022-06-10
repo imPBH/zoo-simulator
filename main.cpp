@@ -3,17 +3,14 @@
 
 #define MEAT 0
 #define SEEDS 1
-
 #define MALE 0
 #define FEMALE 1
-
 #define HONEST true
-
 using namespace std;
 
 class IAnimal {
     int _age;
-    bool _sex;
+    int _sex;
     int _food;
     int _endOfReproduction;
     int _lengthOfLife;
@@ -26,7 +23,7 @@ protected:
     int _sexualMaturity;
     float _infantMortality;
 public:
-    IAnimal(int age, bool sex, int food,
+    IAnimal(int age, int sex, int food,
             int endOfReproduction, int lengthOfLife,
             bool faithful);
 
@@ -37,7 +34,7 @@ public:
     virtual string Species() = 0;
 };
 
-IAnimal::IAnimal(int age, bool sex, int food,
+IAnimal::IAnimal(int age, int sex, int food,
                  int endOfReproduction, int lengthOfLife,
                  bool faithful) : _age(age), _sex(sex), _food(food),
                                   _endOfReproduction(endOfReproduction),
@@ -62,12 +59,12 @@ string IAnimal::Sex() {
 
 class Tiger : public IAnimal {
 public:
-    Tiger(int age, bool sex, bool faithful);
+    Tiger(int age, int sex, bool faithful);
 
     string Species();
 };
 
-Tiger::Tiger(int age, bool sex, bool faithful) :
+Tiger::Tiger(int age, int sex, bool faithful) :
         IAnimal(age, sex, MEAT, 14, 25, faithful) {
     switch (sex) {
         case MALE:
@@ -93,12 +90,12 @@ string Tiger::Species() {
 
 class Eagle : public IAnimal {
 public:
-    Eagle(int age, bool sex, bool faithful);
+    Eagle(int age, int sex, bool faithful);
 
     string Species();
 };
 
-Eagle::Eagle(int age, bool sex, bool faithful) :
+Eagle::Eagle(int age, int sex, bool faithful) :
         IAnimal(age, sex, MEAT, 14, 25, faithful) {
     switch (sex) {
         case MALE:
@@ -124,12 +121,12 @@ string Eagle::Species() {
 
 class Chicken : public IAnimal {
 public:
-    Chicken(int age, bool sex, bool faithful);
+    Chicken(int age, int sex, bool faithful);
 
     string Species();
 };
 
-Chicken::Chicken(int age, bool sex, bool faithful) :
+Chicken::Chicken(int age, int sex, bool faithful) :
         IAnimal(age, sex, SEEDS, 8, 15, faithful) {
     switch (sex) {
         case MALE:
