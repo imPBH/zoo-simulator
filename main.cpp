@@ -35,5 +35,7 @@ int main() {
     Habitat *h2 = new Habitat(CHICKEN);*/
     Zoo *z = new Zoo(80000);
     z->addHabitat(TIGER);
+    z->addHabitat(EAGLE);
+    z->addHabitat(CHICKEN);
     return 0;
 }
