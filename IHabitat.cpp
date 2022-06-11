@@ -6,12 +6,12 @@
 #define EAGLE 1
 #define CHICKEN 2
 
-#include "Habitat.h"
+#include "IHabitat.h"
 #include <iostream>
 
 using namespace std;
 
-Habitat::Habitat(int typeOfAnimal) {
+/*Habitat::Habitat(int typeOfAnimal) {
     switch (typeOfAnimal) {
         case TIGER:
             _typeOfAnimal = TIGER;
@@ -46,4 +46,6 @@ Habitat::Habitat(int typeOfAnimal) {
     }
     cout << "Habitat created" << endl;
     cout << "Type of animal: " << _Species << endl;
-}
+}*/
+
+IHabitat::IHabitat(int typeOfAnimal) : _typeOfAnimal(typeOfAnimal), _currentCapacity(0) {}

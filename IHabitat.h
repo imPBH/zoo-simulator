@@ -2,15 +2,19 @@
 // Created by Alexis on 10/06/2022.
 //
 
-#ifndef TP_ZOO_CPP_HABITAT_H
-#define TP_ZOO_CPP_HABITAT_H
+#ifndef TP_ZOO_CPP_IHABITAT_H
+#define TP_ZOO_CPP_IHABITAT_H
 
 #include <string>
+#include "Chicken.h"
+#include "Eagle.h"
+#include "Tiger.h"
 
 using namespace std;
 
-class Habitat {
+class IHabitat {
     int _typeOfAnimal;
+protected:
     string _Species;
     int _buyingPrice;
     int _sellingPrice;
@@ -19,8 +23,11 @@ class Habitat {
     int _looseIfSurpopulationByMonth;
     float _probabilityOfBeingSick;
 public:
-    Habitat(int typeOfAnimal);
+    IHabitat(int typeOfAnimal);
+    addAnimal(Chicken *chicken);
+    addAnimal(Eagle *eagle);
+    addAnimal(Tiger *tiger);
 };
 
 
-#endif //TP_ZOO_CPP_HABITAT_H
+#endif //TP_ZOO_CPP_IHABITAT_H
