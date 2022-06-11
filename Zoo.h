@@ -7,15 +7,27 @@
 
 #include "IHabitat.h"
 #include "Accounting.h"
+#include "Tiger.h"
+#include "Chicken.h"
+#include "Eagle.h"
+#include "HabitatEagle.h"
+#include "HabitatChicken.h"
+#include "HabitatTiger.h"
 #include <vector>
 
 class Zoo {
-    vector<IHabitat *> _habitats;
+    vector<HabitatTiger *> _habitatsTiger;
+    vector<HabitatChicken *> _habitatsChicken;
+    vector<HabitatEagle *> _habitatsEagle;
     Accounting *_accounting;
 public:
     Zoo(int budget);
 
-    void addHabitat(int typeOfAnimal);
+    void AddHabitat(int typeOfAnimal);
+    void AddAnimal(Tiger *tiger);
+    void AddAnimal(Eagle *eagle);
+    void AddAnimal(Chicken *chicken);
+    void DisplayHabitats();
 };
 
 

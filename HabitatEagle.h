@@ -6,10 +6,15 @@
 #define TP_ZOO_CPP_HABITATEAGLE_H
 
 #include "IHabitat.h"
+#include "Eagle.h"
+#include <vector>
 
 class HabitatEagle : public IHabitat {
+    vector<Eagle *> _eagles;
 public:
     HabitatEagle();
+    void AddAnimal(Eagle *eagle);
+    void DisplayAnimals();
 };
 
 

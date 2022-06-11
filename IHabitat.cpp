@@ -49,3 +49,15 @@ using namespace std;
 }*/
 
 IHabitat::IHabitat(int typeOfAnimal) : _typeOfAnimal(typeOfAnimal), _currentCapacity(0) {}
+
+int IHabitat::GetTypeOfAnimal() {
+    return _typeOfAnimal;
+}
+
+int IHabitat::GetCapacity() {
+    return _capacity;
+}
+
+int IHabitat::GetCurrentCapacity() {
+    return _currentCapacity;
+}

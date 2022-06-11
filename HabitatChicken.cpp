@@ -1,6 +1,7 @@
 //
 // Created by Alexis on 11/06/2022.
 //
+
 #define TIGER 0
 #define EAGLE 1
 #define CHICKEN 2
@@ -8,6 +9,7 @@
 #include "IHabitat.h"
 #include "HabitatChicken.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -21,4 +23,17 @@ HabitatChicken::HabitatChicken() : IHabitat(CHICKEN) {
     _probabilityOfBeingSick = 0.05;
     cout << "Habitat created" << endl;
     cout << "Type of animal: " << _Species << endl;
+}
+
+void HabitatChicken::AddAnimal(Chicken *chicken) {
+    _chickens.push_back(chicken);
+    _currentCapacity++;
+    cout << "Chicken added" << endl;
+}
+
+void HabitatChicken::DisplayAnimals() {
+    cout << "Chickens:" << endl;
+    for (int i = 0; i < _chickens.size(); i++) {
+        cout << "Chicken " << i << ": Age : " << _chickens[i]->Age() << " Sex : " << _chickens[i]->Sex() << endl;
+    }
 }

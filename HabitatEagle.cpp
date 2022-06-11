@@ -8,7 +8,9 @@
 
 #include "IHabitat.h"
 #include "HabitatEagle.h"
+#include "Eagle.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -22,4 +24,17 @@ HabitatEagle::HabitatEagle() : IHabitat(EAGLE) {
     _probabilityOfBeingSick = 0.1;
     cout << "Habitat created" << endl;
     cout << "Type of animal: " << _Species << endl;
+}
+
+void HabitatEagle::AddAnimal(Eagle *eagle) {
+    _eagles.push_back(eagle);
+    _currentCapacity++;
+    cout << "Eagle added" << endl;
+}
+
+void HabitatEagle::DisplayAnimals() {
+    cout << "Eagles:" << endl;
+    for (int i = 0; i < _eagles.size(); i++) {
+        cout << "Eagle " << i << ": Age : " << _eagles[i]->Age() << " Sex : " << _eagles[i]->Sex() << endl;
+    }
 }

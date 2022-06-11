@@ -23,3 +23,16 @@ HabitatTiger::HabitatTiger() : IHabitat(TIGER) {
     cout << "Habitat created" << endl;
     cout << "Type of animal: " << _Species << endl;
 }
+
+void HabitatTiger::AddAnimal(Tiger *tiger) {
+    _tigers.push_back(tiger);
+    _currentCapacity++;
+    cout << "Tiger added" << endl;
+}
+
+void HabitatTiger::DisplayAnimals() {
+    cout << "Tigers:" << endl;
+    for (int i = 0; i < _tigers.size(); i++) {
+        cout << "Tiger " << i << ": Age : " << _tigers[i]->Age() << " Sex : " << _tigers[i]->Sex() << endl;
+    }
+}

@@ -24,9 +24,9 @@ protected:
     float _probabilityOfBeingSick;
 public:
     IHabitat(int typeOfAnimal);
-    addAnimal(Chicken *chicken);
-    addAnimal(Eagle *eagle);
-    addAnimal(Tiger *tiger);
+    int GetTypeOfAnimal();
+    int GetCurrentCapacity();
+    int GetCapacity();
 };
 
 

@@ -7,35 +7,43 @@
 #define EAGLE 1
 #define CHICKEN 2
 
-#include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
-
-/*#include "Accounting.h"
-#include "IAnimal.h"
-#include "Tiger.h"
-#include "Eagle.h"
-#include "Chicken.h"
-#include "Habitat.h"*/
 
 #include "Zoo.h"
 
 int main() {
-    /*Tiger *t = new Tiger(0, MALE, false);
-    Eagle *e = new Eagle(0, FEMALE, HONEST);
-    Chicken *c = new Chicken(0, FEMALE, false);
-    cout << "I am a " << t->Age() << " days old " << t->Species() << " and I am a " << t->Sex() << endl;
-    cout << "I am a " << e->Age() << " days old " << e->Species() << " and I am a " << e->Sex() << endl;
-    cout << "I am a " << c->Age() << " days old " << c->Species() << " and I am a " << c->Sex() << endl;
-    Accounting *a = new Accounting(80000);
-    Habitat *h = new Habitat(TIGER);
-    Habitat *h1 = new Habitat(EAGLE);
-    Habitat *h2 = new Habitat(CHICKEN);*/
     Zoo *z = new Zoo(80000);
-    z->addHabitat(TIGER);
-    z->addHabitat(EAGLE);
-    z->addHabitat(CHICKEN);
+    z->AddHabitat(TIGER);
+    z->AddHabitat(TIGER);
+    z->AddHabitat(EAGLE);
+    z->AddHabitat(CHICKEN);
+    z->AddHabitat(CHICKEN);
+
+    z->AddAnimal(new Tiger(0, MALE, false));
+    z->AddAnimal(new Tiger(0, FEMALE, false));
+    z->AddAnimal(new Tiger(0, MALE, false));
+    z->AddAnimal(new Tiger(0, FEMALE, false));
+
+    z->AddAnimal(new Eagle(0, MALE, true));
+    z->AddAnimal(new Eagle(0, FEMALE, true));
+    z->AddAnimal(new Eagle(0, MALE, true));
+    z->AddAnimal(new Eagle(0, FEMALE, true));
+
+    z->AddAnimal(new Chicken(0, MALE, false));
+
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+    z->AddAnimal(new Chicken(0, FEMALE, false));
+
+    z->DisplayHabitats();
     return 0;
 }

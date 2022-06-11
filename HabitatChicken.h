@@ -6,10 +6,16 @@
 #define TP_ZOO_CPP_HABITATCHICKEN_H
 
 #include "IHabitat.h"
+#include "Chicken.h"
+#include <vector>
 
 class HabitatChicken : public IHabitat {
+    vector<Chicken *> _chickens;
 public:
     HabitatChicken();
+
+    void AddAnimal(Chicken *chicken);
+    void DisplayAnimals();
 };
 
 
