@@ -13,16 +13,17 @@
 
 using namespace std;
 
-#include "Accounting.h"
+/*#include "Accounting.h"
 #include "IAnimal.h"
 #include "Tiger.h"
 #include "Eagle.h"
 #include "Chicken.h"
-#include "Habitat.h"
+#include "Habitat.h"*/
 
+#include "Zoo.h"
 
 int main() {
-    Tiger *t = new Tiger(0, MALE, false);
+    /*Tiger *t = new Tiger(0, MALE, false);
     Eagle *e = new Eagle(0, FEMALE, HONEST);
     Chicken *c = new Chicken(0, FEMALE, false);
     cout << "I am a " << t->Age() << " days old " << t->Species() << " and I am a " << t->Sex() << endl;
@@ -31,6 +32,8 @@ int main() {
     Accounting *a = new Accounting(80000);
     Habitat *h = new Habitat(TIGER);
     Habitat *h1 = new Habitat(EAGLE);
-    Habitat *h2 = new Habitat(CHICKEN);
+    Habitat *h2 = new Habitat(CHICKEN);*/
+    Zoo *z = new Zoo(80000);
+    z->addHabitat(TIGER);
     return 0;
 }
