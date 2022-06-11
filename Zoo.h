@@ -5,15 +5,16 @@
 #ifndef TP_ZOO_CPP_ZOO_H
 #define TP_ZOO_CPP_ZOO_H
 
-#include "Habitat.h"
+#include "IHabitat.h"
 #include "Accounting.h"
 #include <vector>
 
 class Zoo {
-    vector <Habitat> _habitats;
+    vector<IHabitat *> _habitats;
     Accounting *_accounting;
 public:
     Zoo(int budget);
+
     void addHabitat(int typeOfAnimal);
 };
 
