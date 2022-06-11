@@ -5,6 +5,10 @@
 #ifndef TP_ZOO_CPP_IANIMAL_H
 #define TP_ZOO_CPP_IANIMAL_H
 
+#include <string>
+
+using namespace std;
+
 class IAnimal {
     int _age;
     int _sex;
