@@ -78,11 +78,23 @@ void Zoo::DisplayHabitats() {
         _habitatsTiger[i]->DisplayAnimals();
     }
     for (int i = 0; i < _habitatsEagle.size(); i++) {
-        cout << "Eagles habitat No " << i+1 << endl;
+        cout << "Eagles habitat No " << i + 1 << endl;
         _habitatsEagle[i]->DisplayAnimals();
     }
     for (int i = 0; i < _habitatsChicken.size(); i++) {
-        cout << "Chickens habitat No " << i+1 << endl;
+        cout << "Chickens habitat No " << i + 1 << endl;
         _habitatsChicken[i]->DisplayAnimals();
     }
+}
+
+void Zoo::BuySeed(int seedCount) {
+    _accounting->BuySeed(seedCount);
+}
+
+void Zoo::BuyMeat(int meatCount) {
+    _accounting->BuyMeat(meatCount);
+}
+
+float Zoo::Budget() {
+    return _accounting->Budget();
 }

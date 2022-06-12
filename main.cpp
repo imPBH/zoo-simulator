@@ -8,6 +8,7 @@
 #define CHICKEN 2
 
 #include <vector>
+#include "iostream"
 
 using namespace std;
 
@@ -45,5 +46,8 @@ int main() {
     z->AddAnimal(new Chicken(0, FEMALE, false));
 
     z->DisplayHabitats();
+    z->BuyMeat(15);
+    z->BuySeed(20);
+    cout << "Budget : " << z->Budget() << endl;
     return 0;
 }

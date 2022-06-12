@@ -18,6 +18,9 @@ class Accounting {
     int _subventionForTiger;
 public:
     Accounting(int budget);
+    void BuySeed(int seedCount);
+    void BuyMeat(int meatCount);
+    float Budget();
 };
 
 

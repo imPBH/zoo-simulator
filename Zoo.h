@@ -28,6 +28,9 @@ public:
     void AddAnimal(Eagle *eagle);
     void AddAnimal(Chicken *chicken);
     void DisplayHabitats();
+    void BuySeed(int seedCount);
+    void BuyMeat(int meatCount);
+    float Budget();
 };
 
 

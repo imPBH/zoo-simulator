@@ -31,3 +31,27 @@ Accounting::Accounting(int budget) {
     cout << "Subvention for Eagle: " << _subventionForEagle << endl;
     cout << "Subvention for Tiger: " << _subventionForTiger << endl;
 }
+
+void Accounting::BuySeed(int seedCount) {
+    if ((seedCount * _seedPrice) > _budget) {
+        cout << "Not enough money" << endl;
+        return;
+    }
+    _seedCount += seedCount;
+    _budget -= seedCount * _seedPrice;
+    cout << "Buyed " << seedCount << "kg of seeds, " << "seed count: " << _seedCount << endl;
+}
+
+void Accounting::BuyMeat(int meatCount) {
+    if ((meatCount * _meatPrice) > _budget) {
+        cout << "Not enough money" << endl;
+        return;
+    }
+    _meatCount += meatCount;
+    _budget -= meatCount * _meatPrice;
+    cout << "Buyed " << meatCount << "kg of meat, " << "meat count: " << _meatCount << endl;
+}
+
+float Accounting::Budget() {
+    return _budget;
+}
