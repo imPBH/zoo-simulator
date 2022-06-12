@@ -35,6 +35,7 @@ public:
     float SeedCount();
     float MeatCount();
     void SellHabitat(int typeOfAnimal);
+    void SellAnimal(int typeOfAnimal);
 };
 
 

@@ -58,5 +58,9 @@ int main() {
     cout << "Meat stock : " << z->MeatCount() << endl;
     z->SellHabitat(TIGER);
     cout << "Budget : " << z->Budget() << endl;
+    z->SellAnimal(TIGER);
+    z->SellAnimal(EAGLE);
+    z->SellAnimal(CHICKEN);
+    cout << z->Budget() << endl;
     return 0;
 }

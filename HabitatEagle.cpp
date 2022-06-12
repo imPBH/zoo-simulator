@@ -55,3 +55,13 @@ void HabitatEagle::FeedAnimals(Accounting *accounting) {
 int HabitatEagle::Size() {
     return _eagles.size();
 }
+
+int HabitatEagle::GetAnimalPrice(int index) {
+    return _eagles[index]->SellingPrice();
+}
+
+void HabitatEagle::RemoveAnimal(int index) {
+    delete _eagles[index];
+    _eagles.erase(_eagles.begin() + index);
+    _currentCapacity--;
+}

@@ -18,6 +18,8 @@ public:
     void DisplayAnimals();
     void FeedAnimals(Accounting *accounting);
     int Size();
+    int GetAnimalPrice(int index);
+    void RemoveAnimal(int index);
 };
 
 

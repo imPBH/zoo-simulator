@@ -53,3 +53,13 @@ void HabitatTiger::FeedAnimals(Accounting *accounting) {
 int HabitatTiger::Size() {
     return _tigers.size();
 }
+
+int HabitatTiger::GetAnimalPrice(int index) {
+    return _tigers[index]->SellingPrice();
+}
+
+void HabitatTiger::RemoveAnimal(int index) {
+    delete _tigers[index];
+    _tigers.erase(_tigers.begin() + index);
+    _currentCapacity--;
+}

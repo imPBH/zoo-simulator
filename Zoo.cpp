@@ -183,3 +183,53 @@ void Zoo::SellHabitat(int typeOfAnimal) {
             cout << "No habitat can be sold, make sure there is an empty one" << endl;
     }
 }
+
+void Zoo::SellAnimal(int typeOfAnimal) {
+    switch(typeOfAnimal) {
+        case TIGER:
+            for (int i = 0; i < _habitatsTiger.size(); i++) {
+                if (_habitatsTiger[i]->Size() > 0) {
+                    _habitatsTiger[i]->DisplayAnimals();
+                    cout << "Enter the number of the animal you want to sell : ";
+                    int number;
+                    cin >> number;
+                    cout << "You sold a tiger for $" << _habitatsTiger[i]->GetAnimalPrice(number) << endl;
+                    _accounting->Sell(_habitatsTiger[i]->GetAnimalPrice(number));
+                    _habitatsTiger[i]->RemoveAnimal(number);
+                    return;
+                }
+            }
+            cout << "No animal can be sold, make sure there is an empty one" << endl;
+            break;
+        case EAGLE:
+            for (int i = 0; i < _habitatsEagle.size(); i++) {
+                if (_habitatsEagle[i]->Size() > 0) {
+                    _habitatsEagle[i]->DisplayAnimals();
+                    cout << "Enter the number of the animal you want to sell : ";
+                    int number;
+                    cin >> number;
+                    cout << "You sold an eagle for $" << _habitatsEagle[i]->GetAnimalPrice(number) << endl;
+                    _accounting->Sell(_habitatsEagle[i]->GetAnimalPrice(number));
+                    _habitatsEagle[i]->RemoveAnimal(number);
+                    return;
+                }
+            }
+            cout << "No animal can be sold, make sure there is an empty one" << endl;
+            break;
+        case CHICKEN:
+            for (int i = 0; i < _habitatsChicken.size(); i++) {
+                if (_habitatsChicken[i]->Size() > 0) {
+                    _habitatsChicken[i]->DisplayAnimals();
+                    cout << "Enter the number of the animal you want to sell : ";
+                    int number;
+                    cin >> number;
+                    cout << "You sold a chicken for $" << _habitatsChicken[i]->GetAnimalPrice(number) << endl;
+                    _accounting->Sell(_habitatsChicken[i]->GetAnimalPrice(number));
+                    _habitatsChicken[i]->RemoveAnimal(number);
+                    return;
+                }
+            }
+            cout << "No animal can be sold, make sure there is an empty one" << endl;
+            break;
+    }
+}
