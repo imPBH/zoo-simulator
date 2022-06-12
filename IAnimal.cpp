@@ -47,3 +47,11 @@ float IAnimal::FoodByDay() {
 int IAnimal::SexInt() {
     return _sex;
 }
+
+void IAnimal::Dye() {
+    _isAlive = false;
+}
+
+void IAnimal::AddMonth() {
+    _age += 1;
+}

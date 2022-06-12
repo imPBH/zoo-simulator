@@ -34,7 +34,7 @@ void HabitatTiger::AddAnimal(Tiger *tiger) {
 void HabitatTiger::DisplayAnimals() {
     cout << "Tigers:" << endl;
     for (int i = 0; i < _tigers.size(); i++) {
-        cout << "Tiger " << i << ": Age : " << _tigers[i]->Age() << " Sex : " << _tigers[i]->Sex() << endl;
+        cout << "Tiger " << i << ": Age : " << _tigers[i]->Age() << " months, Sex : " << _tigers[i]->Sex() << endl;
     }
 }
 
@@ -62,4 +62,10 @@ void HabitatTiger::RemoveAnimal(int index) {
     delete _tigers[index];
     _tigers.erase(_tigers.begin() + index);
     _currentCapacity--;
+}
+
+void HabitatTiger::AddMonthToAnimals() {
+    for (int i = 0; i < _tigers.size(); i++) {
+        _tigers[i]->AddMonth();
+    }
 }

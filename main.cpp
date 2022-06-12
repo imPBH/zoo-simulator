@@ -13,12 +13,13 @@
 using namespace std;
 
 #include "Zoo.h"
+#include "Game.h"
 
 int main() {
-    Zoo *z = new Zoo(80000);
+    /*Zoo *z = new Zoo(80000);
+    z->bAddHabitat(TIGER);
     z->AddHabitat(TIGER);
-    z->AddHabitat(TIGER);
-    z->AddHabitat(EAGLE);
+    z->AddHaitat(EAGLE);
     z->AddHabitat(CHICKEN);
     z->AddHabitat(CHICKEN);
     z->AddHabitat(CHICKEN);
@@ -61,6 +62,10 @@ int main() {
     z->SellAnimal(TIGER);
     z->SellAnimal(EAGLE);
     z->SellAnimal(CHICKEN);
-    cout << z->Budget() << endl;
+    cout << z->Budget() << endl;*/
+
+    Game *g = new Game(10, 80000);
+    g->Start();
+
     return 0;
 }

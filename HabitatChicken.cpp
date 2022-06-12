@@ -35,7 +35,7 @@ void HabitatChicken::AddAnimal(Chicken *chicken) {
 void HabitatChicken::DisplayAnimals() {
     cout << "Chickens:" << endl;
     for (int i = 0; i < _chickens.size(); i++) {
-        cout << "Chicken " << i << ": Age : " << _chickens[i]->Age() << " Sex : " << _chickens[i]->Sex() << endl;
+        cout << "Chicken " << i << ": Age : " << _chickens[i]->Age() << " months, Sex : " << _chickens[i]->Sex() << endl;
     }
 }
 
@@ -63,4 +63,10 @@ void HabitatChicken::RemoveAnimal(int index) {
     delete _chickens[index];
     _chickens.erase(_chickens.begin() + index);
     _currentCapacity--;
+}
+
+void HabitatChicken::AddMonthToAnimals() {
+    for (int i = 0; i < _chickens.size(); i++) {
+        _chickens[i]->AddMonth();
+    }
 }

@@ -26,6 +26,7 @@ protected:
     float _infantMortality;
     int _hungryInNbDays;
     bool _isHungry;
+    bool _isAlive;
 public:
     IAnimal(int age, int sex, int food,
             int endOfReproduction, int lengthOfLife,
@@ -39,6 +40,8 @@ public:
     virtual string Species() = 0;
     void Eat();
     float FoodByDay();
+    void Dye();
+    void AddMonth();
 };
 
 

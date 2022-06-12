@@ -36,7 +36,7 @@ void HabitatEagle::AddAnimal(Eagle *eagle) {
 void HabitatEagle::DisplayAnimals() {
     cout << "Eagles:" << endl;
     for (int i = 0; i < _eagles.size(); i++) {
-        cout << "Eagle " << i << ": Age : " << _eagles[i]->Age() << " Sex : " << _eagles[i]->Sex() << endl;
+        cout << "Eagle " << i << ": Age : " << _eagles[i]->Age() << " months, Sex : " << _eagles[i]->Sex() << endl;
     }
 }
 
@@ -64,4 +64,10 @@ void HabitatEagle::RemoveAnimal(int index) {
     delete _eagles[index];
     _eagles.erase(_eagles.begin() + index);
     _currentCapacity--;
+}
+
+void HabitatEagle::AddMonthToAnimals() {
+    for (int i = 0; i < _eagles.size(); i++) {
+        _eagles[i]->AddMonth();
+    }
 }

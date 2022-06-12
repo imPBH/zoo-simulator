@@ -20,6 +20,7 @@ public:
     int Size();
     int GetAnimalPrice(int index);
     void RemoveAnimal(int index);
+    void AddMonthToAnimals();
 };
 
 

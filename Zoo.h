@@ -22,11 +22,8 @@ class Zoo {
     Accounting *_accounting;
 public:
     Zoo(int budget);
-
-    void AddHabitat(int typeOfAnimal);
-    void AddAnimal(Tiger *tiger);
-    void AddAnimal(Eagle *eagle);
-    void AddAnimal(Chicken *chicken);
+    void BuyHabitat(int typeOfAnimal);
+    void BuyAnimal(int typeOfAnimal, int age, int sex);
     void DisplayHabitats();
     void BuySeed(int seedCount);
     void BuyMeat(int meatCount);
@@ -36,6 +33,8 @@ public:
     float MeatCount();
     void SellHabitat(int typeOfAnimal);
     void SellAnimal(int typeOfAnimal);
+    void SeeZoo();
+    void AddMonthToAnimals();
 };
 
 
