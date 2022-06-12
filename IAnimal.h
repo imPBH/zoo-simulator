@@ -16,6 +16,7 @@ class IAnimal {
     int _endOfReproduction;
     int _lengthOfLife;
     bool _faithful;
+    bool _isPregnant;
 protected:
     int _price;
     float _foodByDay;
@@ -23,6 +24,8 @@ protected:
     int _pregnancy;
     int _sexualMaturity;
     float _infantMortality;
+    int _hungryInNbDays;
+    bool _isHungry;
 public:
     IAnimal(int age, int sex, int food,
             int endOfReproduction, int lengthOfLife,
@@ -31,8 +34,11 @@ public:
     int Age();
 
     string Sex();
+    int SexInt();
 
     virtual string Species() = 0;
+    void Eat();
+    float FoodByDay();
 };
 
 

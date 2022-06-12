@@ -7,6 +7,7 @@
 
 #include "IHabitat.h"
 #include "Eagle.h"
+#include "Accounting.h"
 #include <vector>
 
 class HabitatEagle : public IHabitat {
@@ -15,6 +16,7 @@ public:
     HabitatEagle();
     void AddAnimal(Eagle *eagle);
     void DisplayAnimals();
+    void FeedAnimals(Accounting *accounting);
 };
 
 

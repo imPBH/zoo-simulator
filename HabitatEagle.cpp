@@ -9,6 +9,7 @@
 #include "IHabitat.h"
 #include "HabitatEagle.h"
 #include "Eagle.h"
+#include "Accounting.h"
 #include <iostream>
 #include <vector>
 
@@ -36,5 +37,17 @@ void HabitatEagle::DisplayAnimals() {
     cout << "Eagles:" << endl;
     for (int i = 0; i < _eagles.size(); i++) {
         cout << "Eagle " << i << ": Age : " << _eagles[i]->Age() << " Sex : " << _eagles[i]->Sex() << endl;
+    }
+}
+
+void HabitatEagle::FeedAnimals(Accounting *accounting) {
+    for (int i = 0; i < _eagles.size(); i++) {
+        if (accounting->MeatCount() >= _eagles[i]->FoodByDay()) {
+            _eagles[i]->Eat();
+            accounting->RemoveMeat(_eagles[i]->FoodByDay());
+            cout << "Eagle " << i+1 << " ate " << _eagles[i]->FoodByDay() << " kg of meat" << endl;
+        } else {
+            cout << "Not enough meat" << endl;
+        }
     }
 }

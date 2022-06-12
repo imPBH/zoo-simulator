@@ -30,9 +30,20 @@ string IAnimal::Sex() {
     switch (_sex) {
         case MALE:
             return "male";
-            break;
         case FEMALE:
             return "female";
-            break;
     }
+}
+
+void IAnimal::Eat() {
+    _hungryInNbDays = _daysBeforeHunger;
+    _isHungry = false;
+}
+
+float IAnimal::FoodByDay() {
+    return _foodByDay;
+}
+
+int IAnimal::SexInt() {
+    return _sex;
 }

@@ -12,6 +12,8 @@ public:
     Chicken(int age, int sex, bool faithful);
 
     string Species();
+    int BuyingPrice();
+    int SellingPrice();
 };
 
 

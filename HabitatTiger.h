@@ -6,6 +6,7 @@
 #define TP_ZOO_CPP_HABITATTIGER_H
 
 #include "IHabitat.h"
+#include "Accounting.h"
 #include "Tiger.h"
 #include <vector>
 
@@ -15,6 +16,7 @@ public:
     HabitatTiger();
     void AddAnimal(Tiger *tiger);
     void DisplayAnimals();
+    void FeedAnimals(Accounting *accounting);
 };
 
 

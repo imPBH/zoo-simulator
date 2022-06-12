@@ -10,17 +10,22 @@ class Accounting {
     float _budget;
     float _seedPrice;
     float _meatPrice;
-    int _seedCount;
-    int _meatCount;
+    float _seedCount;
+    float _meatCount;
     int _adultTicketPrice;
     int _childTicketPrice;
     int _subventionForEagle;
     int _subventionForTiger;
 public:
     Accounting(int budget);
-    void BuySeed(int seedCount);
-    void BuyMeat(int meatCount);
+    void BuySeed(float seedCount);
+    void BuyMeat(float meatCount);
     float Budget();
+    float SeedCount();
+    float MeatCount();
+    void RemoveMeat(float meatCount);
+    void RemoveSeed(float seedCount);
+    void Buy(float price);
 };
 
 

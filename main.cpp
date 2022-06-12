@@ -22,10 +22,10 @@ int main() {
     z->AddHabitat(CHICKEN);
     z->AddHabitat(CHICKEN);
 
-    z->AddAnimal(new Tiger(0, MALE, false));
-    z->AddAnimal(new Tiger(0, FEMALE, false));
-    z->AddAnimal(new Tiger(0, MALE, false));
-    z->AddAnimal(new Tiger(0, FEMALE, false));
+    z->AddAnimal(new Tiger(6, MALE, false));
+    z->AddAnimal(new Tiger(6, FEMALE, false));
+    z->AddAnimal(new Tiger(48, MALE, false));
+    z->AddAnimal(new Tiger(48, FEMALE, false));
 
     z->AddAnimal(new Eagle(0, MALE, true));
     z->AddAnimal(new Eagle(0, FEMALE, true));
@@ -46,8 +46,11 @@ int main() {
     z->AddAnimal(new Chicken(0, FEMALE, false));
 
     z->DisplayHabitats();
-    z->BuyMeat(15);
-    z->BuySeed(20);
+    z->BuyMeat(200);
+    z->BuySeed(2);
     cout << "Budget : " << z->Budget() << endl;
+    z->FeedAnimals();
+    cout << "Seeds stock : " << z->SeedCount() << endl;
+    cout << "Meat stock : " << z->MeatCount() << endl;
     return 0;
 }

@@ -31,6 +31,9 @@ public:
     void BuySeed(int seedCount);
     void BuyMeat(int meatCount);
     float Budget();
+    void FeedAnimals();
+    float SeedCount();
+    float MeatCount();
 };
 
 

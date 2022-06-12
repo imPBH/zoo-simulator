@@ -10,6 +10,8 @@ public:
     Tiger(int age, int sex, bool faithful);
 
     string Species();
+    int BuyingPrice();
+    int SellingPrice();
 };
 
 #endif //TP_ZOO_CPP_TIGER_H

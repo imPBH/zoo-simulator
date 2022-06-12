@@ -37,3 +37,27 @@ Eagle::Eagle(int age, int sex, bool faithful) :
 string Eagle::Species() {
     return "eagle";
 }
+
+int Eagle::BuyingPrice() {
+    if (this->Age() <= 6) {
+        return 1000;
+    }
+    if (this->Age() <= 48) {
+        return 4000;
+    }
+    if (this->Age() <= 168) {
+        return 2000;
+    }
+}
+
+int Eagle::SellingPrice() {
+    if (this->Age() <= 6) {
+        return 500;
+    }
+    if (this->Age() <= 48) {
+        return 2000;
+    }
+    if (this->Age() <= 168) {
+        return 400;
+    }
+}

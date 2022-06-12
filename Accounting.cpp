@@ -32,7 +32,7 @@ Accounting::Accounting(int budget) {
     cout << "Subvention for Tiger: " << _subventionForTiger << endl;
 }
 
-void Accounting::BuySeed(int seedCount) {
+void Accounting::BuySeed(float seedCount) {
     if ((seedCount * _seedPrice) > _budget) {
         cout << "Not enough money" << endl;
         return;
@@ -42,7 +42,7 @@ void Accounting::BuySeed(int seedCount) {
     cout << "Buyed " << seedCount << "kg of seeds, " << "seed count: " << _seedCount << endl;
 }
 
-void Accounting::BuyMeat(int meatCount) {
+void Accounting::BuyMeat(float meatCount) {
     if ((meatCount * _meatPrice) > _budget) {
         cout << "Not enough money" << endl;
         return;
@@ -54,4 +54,24 @@ void Accounting::BuyMeat(int meatCount) {
 
 float Accounting::Budget() {
     return _budget;
+}
+
+float Accounting::SeedCount() {
+    return _seedCount;
+}
+
+float Accounting::MeatCount() {
+    return _meatCount;
+}
+
+void Accounting::RemoveMeat(float meatCount) {
+    _meatCount -= meatCount;
+}
+
+void Accounting::RemoveSeed(float seedCount) {
+    _seedCount -= seedCount;
+}
+
+void Accounting::Buy(float price) {
+    _budget -= price;
 }

@@ -7,6 +7,7 @@
 
 #include "IHabitat.h"
 #include "Chicken.h"
+#include "Accounting.h"
 #include <vector>
 
 class HabitatChicken : public IHabitat {
@@ -16,6 +17,7 @@ public:
 
     void AddAnimal(Chicken *chicken);
     void DisplayAnimals();
+    void FeedAnimals(Accounting *accounting);
 };
 
 

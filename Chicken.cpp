@@ -37,3 +37,21 @@ Chicken::Chicken(int age, int sex, bool faithful) :
 string Chicken::Species() {
     return "chicken";
 }
+
+int Chicken::BuyingPrice() {
+    switch (this->SexInt()) {
+        case MALE:
+            return 100;
+        case FEMALE:
+            return 20;
+    }
+}
+
+int Chicken::SellingPrice() {
+    switch (this->SexInt()) {
+        case MALE:
+            return 20;
+        case FEMALE:
+            return 10;
+    }
+}

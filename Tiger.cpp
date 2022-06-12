@@ -37,3 +37,26 @@ Tiger::Tiger(int age, int sex, bool faithful) :
 string Tiger::Species() {
     return "tiger";
 }
+
+int Tiger::BuyingPrice() {
+    if (this->Age() <= 6) {
+        return 3000;
+    }
+    if (this->Age() <= 48) {
+        return 120000;
+    }
+    if (this->Age() <= 168) {
+        return 60000;
+    }
+}
+int Tiger::SellingPrice() {
+    if (this->Age() <= 6) {
+        return 1500;
+    }
+    if (this->Age() <= 48) {
+        return 60000;
+    }
+    if (this->Age() <= 168) {
+        return 10000;
+    }
+}

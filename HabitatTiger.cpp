@@ -8,6 +8,7 @@
 
 #include "IHabitat.h"
 #include "HabitatTiger.h"
+#include "Accounting.h"
 #include <iostream>
 
 using namespace std;
@@ -34,5 +35,17 @@ void HabitatTiger::DisplayAnimals() {
     cout << "Tigers:" << endl;
     for (int i = 0; i < _tigers.size(); i++) {
         cout << "Tiger " << i << ": Age : " << _tigers[i]->Age() << " Sex : " << _tigers[i]->Sex() << endl;
+    }
+}
+
+void HabitatTiger::FeedAnimals(Accounting *accounting) {
+    for (int i = 0; i < _tigers.size(); i++) {
+        if (accounting->MeatCount() >= _tigers[i]->FoodByDay()) {
+            _tigers[i]->Eat();
+            accounting->RemoveMeat(_tigers[i]->FoodByDay());
+            cout << "Tiger " << i+1 << " ate " << _tigers[i]->FoodByDay() << " of meat" << endl;
+        } else {
+            cout << "Not enough meat" << endl;
+        }
     }
 }
