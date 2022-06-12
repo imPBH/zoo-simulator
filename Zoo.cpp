@@ -145,3 +145,41 @@ float Zoo::SeedCount() {
 float Zoo::MeatCount() {
     return _accounting->MeatCount();
 }
+
+void Zoo::SellHabitat(int typeOfAnimal) {
+    switch (typeOfAnimal) {
+        case TIGER:
+            for (int i = 0; i < _habitatsTiger.size(); i++) {
+                if (_habitatsTiger[i]->Size() == 0) {
+                    _accounting->Sell(_habitatsTiger[i]->GetSellingPrice());
+                    delete _habitatsTiger[i];
+                    _habitatsTiger.erase(_habitatsTiger.begin() + i);
+                    cout << "Habitat sold" << endl;
+                    return;
+                }
+            }
+            cout << "No habitat can be sold, make sure there is an empty one" << endl;
+        case EAGLE:
+            for (int i = 0; i < _habitatsEagle.size(); i++) {
+                if (_habitatsEagle[i]->Size() == 0) {
+                    _accounting->Sell(_habitatsEagle[i]->GetSellingPrice());
+                    delete _habitatsEagle[i];
+                    _habitatsEagle.erase(_habitatsEagle.begin() + i);
+                    cout << "Habitat sold" << endl;
+                    return;
+                }
+            }
+            cout << "No habitat can be sold, make sure there is an empty one" << endl;
+        case CHICKEN:
+            for (int i = 0; i < _habitatsChicken.size(); i++) {
+                if (_habitatsChicken[i]->Size() == 0) {
+                    _accounting->Sell(_habitatsChicken[i]->GetSellingPrice());
+                    delete _habitatsChicken[i];
+                    _habitatsChicken.erase(_habitatsChicken.begin() + i);
+                    cout << "Habitat sold" << endl;
+                    return;
+                }
+            }
+            cout << "No habitat can be sold, make sure there is an empty one" << endl;
+    }
+}

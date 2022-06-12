@@ -18,6 +18,7 @@ public:
     void AddAnimal(Chicken *chicken);
     void DisplayAnimals();
     void FeedAnimals(Accounting *accounting);
+    int Size();
 };
 
 

@@ -75,3 +75,7 @@ void Accounting::RemoveSeed(float seedCount) {
 void Accounting::Buy(float price) {
     _budget -= price;
 }
+
+void Accounting::Sell(float price) {
+    _budget += price;
+}

@@ -17,6 +17,7 @@ public:
     void AddAnimal(Eagle *eagle);
     void DisplayAnimals();
     void FeedAnimals(Accounting *accounting);
+    int Size();
 };
 
 

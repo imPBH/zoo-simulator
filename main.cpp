@@ -21,6 +21,10 @@ int main() {
     z->AddHabitat(EAGLE);
     z->AddHabitat(CHICKEN);
     z->AddHabitat(CHICKEN);
+    z->AddHabitat(CHICKEN);
+    z->AddHabitat(CHICKEN);
+    z->AddHabitat(CHICKEN);
+    z->AddHabitat(CHICKEN);
 
     z->AddAnimal(new Tiger(6, MALE, false));
     z->AddAnimal(new Tiger(6, FEMALE, false));
@@ -52,5 +56,7 @@ int main() {
     z->FeedAnimals();
     cout << "Seeds stock : " << z->SeedCount() << endl;
     cout << "Meat stock : " << z->MeatCount() << endl;
+    z->SellHabitat(TIGER);
+    cout << "Budget : " << z->Budget() << endl;
     return 0;
 }

@@ -50,3 +50,7 @@ void HabitatChicken::FeedAnimals(Accounting *accounting) {
         }
     }
 }
+
+int HabitatChicken::Size() {
+    return _chickens.size();
+}

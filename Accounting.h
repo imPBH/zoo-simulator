@@ -26,6 +26,7 @@ public:
     void RemoveMeat(float meatCount);
     void RemoveSeed(float seedCount);
     void Buy(float price);
+    void Sell(float price);
 };
 
 

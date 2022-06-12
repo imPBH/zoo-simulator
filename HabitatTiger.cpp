@@ -49,3 +49,7 @@ void HabitatTiger::FeedAnimals(Accounting *accounting) {
         }
     }
 }
+
+int HabitatTiger::Size() {
+    return _tigers.size();
+}

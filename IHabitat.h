@@ -27,6 +27,8 @@ public:
     int GetTypeOfAnimal();
     int GetCurrentCapacity();
     int GetCapacity();
+    int GetBuyingPrice();
+    int GetSellingPrice();
 };
 
 

@@ -61,3 +61,11 @@ int IHabitat::GetCapacity() {
 int IHabitat::GetCurrentCapacity() {
     return _currentCapacity;
 }
+
+int IHabitat::GetBuyingPrice() {
+    return _buyingPrice;
+}
+
+int IHabitat::GetSellingPrice() {
+    return _sellingPrice;
+}

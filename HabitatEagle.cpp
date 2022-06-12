@@ -51,3 +51,7 @@ void HabitatEagle::FeedAnimals(Accounting *accounting) {
         }
     }
 }
+
+int HabitatEagle::Size() {
+    return _eagles.size();
+}
